@@ -81,57 +81,68 @@ const editedVideos = [
   {
     title: "Creator Clip",
     category: "Short Form",
-    src: "/edited-videos/img-0667.mp4",
+    src: "/edited-videos-web/img-0667.mp4",
+    poster: "/edited-video-posters/img-0667.jpg",
   },
   {
     title: "Brand Moment",
     category: "Social Reel",
-    src: "/edited-videos/img-0673.mp4",
+    src: "/edited-videos-web/img-0673.mp4",
+    poster: "/edited-video-posters/img-0673.jpg",
   },
   {
     title: "Shoot Highlight",
     category: "Campaign Edit",
-    src: "/edited-videos/img-0710-1.mp4",
+    src: "/edited-videos-web/img-0710-1.mp4",
+    poster: "/edited-video-posters/img-0710-1.jpg",
   },
   {
     title: "Content Cutdown",
     category: "Vertical Video",
-    src: "/edited-videos/img-0708-1.mp4",
+    src: "/edited-videos-web/img-0708-1.mp4",
+    poster: "/edited-video-posters/img-0708-1.jpg",
   },
   {
     title: "Product Reel",
     category: "Brand Content",
-    src: "/edited-videos/img-1256.mp4",
+    src: "/edited-videos-web/img-1256.mp4",
+    poster: "/edited-video-posters/img-1256.jpg",
   },
   {
     title: "Quick Hook",
     category: "Social Clip",
-    src: "/edited-videos/img-1267.mp4",
+    src: "/edited-videos-web/img-1267.mp4",
+    poster: "/edited-video-posters/img-1267.jpg",
   },
   {
     title: "Motion Detail",
     category: "Edited Reel",
-    src: "/edited-videos/img-1280.mp4",
+    src: "/edited-videos-web/img-1280.mp4",
+    poster: "/edited-video-posters/img-1280.jpg",
   },
   {
     title: "Lifestyle Cut",
     category: "Content Edit",
-    src: "/edited-videos/img-1279.mp4",
+    src: "/edited-videos-web/img-1279.mp4",
+    poster: "/edited-video-posters/img-1279.jpg",
   },
   {
     title: "Launch Asset",
     category: "Short Video",
-    src: "/edited-videos/img-1281.mp4",
+    src: "/edited-videos-web/img-1281.mp4",
+    poster: "/edited-video-posters/img-1281.jpg",
   },
   {
     title: "Studio Sequence",
     category: "Client Edit",
-    src: "/edited-videos/img-5089.mov",
+    src: "/edited-videos-web/img-5089.mp4",
+    poster: "/edited-video-posters/img-5089.jpg",
   },
   {
     title: "Event Reel",
     category: "Highlight Edit",
-    src: "/edited-videos/img-1048.mp4",
+    src: "/edited-videos-web/img-1048.mp4",
+    poster: "/edited-video-posters/img-1048.jpg",
   },
 ];
 
@@ -664,6 +675,7 @@ export default function Home() {
                     <video
                       className="h-full w-full object-cover"
                       src={video.src}
+                      poster={video.poster}
                       muted
                       loop
                       autoPlay
@@ -692,6 +704,7 @@ export default function Home() {
                       <video
                         className="h-full w-full object-cover"
                         src={video.src}
+                        poster={video.poster}
                         muted
                         loop
                         autoPlay
