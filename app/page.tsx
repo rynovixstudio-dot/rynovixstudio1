@@ -79,11 +79,6 @@ const services = [
 
 const editedVideos = [
   {
-  title: "Showreel Cut",
-  category: "Reel Edit",
-  src: "/edited-videos/video-name.mp4",
-  },
-  {
     title: "Creator Clip",
     category: "Short Form",
     src: "/edited-videos/img-0667.mp4",
@@ -102,16 +97,6 @@ const editedVideos = [
     title: "Content Cutdown",
     category: "Vertical Video",
     src: "/edited-videos/img-0708-1.mp4",
-  },
-  {
-    title: "Cinematic Edit",
-    category: "Promo Video",
-    src: "/edited-videos/img-1048.mp4",
-  },
-  {
-    title: "Studio Sequence",
-    category: "Client Edit",
-    src: "/edited-videos/img-5089.mov",
   },
   {
     title: "Product Reel",
@@ -137,6 +122,11 @@ const editedVideos = [
     title: "Launch Asset",
     category: "Short Video",
     src: "/edited-videos/img-1281.mp4",
+  },
+  {
+    title: "Studio Sequence",
+    category: "Client Edit",
+    src: "/edited-videos/img-5089.mov",
   },
   {
     title: "Event Reel",
