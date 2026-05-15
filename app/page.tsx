@@ -433,14 +433,29 @@ function SocialIcon({ icon, className = "h-5 w-5" }: { icon: string; className?:
 export default function Home() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     setFormStatus("sending");
 
     const form = event.currentTarget;
-    window.setTimeout(() => {
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Web3Forms request failed");
+      }
+
       form.reset();
       setFormStatus("success");
-    }, 1200);
+    } catch {
+      setFormStatus("error");
+    }
   }
 
   return (
@@ -866,15 +881,12 @@ export default function Home() {
             </p>
           </div>
           <form
-            action="https://formsubmit.co/rynovixstudio@gmail.com"
-            method="POST"
-            target="formsubmit-hidden-frame"
             onSubmit={handleContactSubmit}
             className="rounded-[8px] border border-white/12 bg-[#080816]/80 p-5 shadow-2xl md:p-7"
           >
-            <input type="hidden" name="_subject" value="New Rynovix Studio Website Inquiry" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="access_key" value="f8ae0292-a179-4a21-ab19-84ec50729d8c" />
+            <input type="hidden" name="subject" value="New Rynovix Studio Website Inquiry" />
+            <input type="hidden" name="from_name" value="Rynovix Studio Website" />
             <label className="mb-4 block">
               <span className="mb-2 block text-sm font-bold text-slate-200">Name</span>
               <input
@@ -916,12 +928,13 @@ export default function Home() {
               <p className="mt-4 rounded-[8px] border border-emerald-300/25 bg-emerald-400/10 px-4 py-3 text-sm font-semibold text-emerald-100">
                 Thanks. Your inquiry has been sent.
               </p>
-            )}          </form>
-          <iframe
-            name="formsubmit-hidden-frame"
-            title="Form submit target"
-            className="hidden"
-          />
+            )}
+            {formStatus === "error" && (
+              <p className="mt-4 rounded-[8px] border border-red-300/25 bg-red-400/10 px-4 py-3 text-sm font-semibold text-red-100">
+                Something went wrong. Please email rynovixstudio@gmail.com or WhatsApp us.
+              </p>
+            )}
+          </form>
         </div>
       </section>
 
