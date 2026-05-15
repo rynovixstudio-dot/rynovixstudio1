@@ -433,31 +433,14 @@ function SocialIcon({ icon, className = "h-5 w-5" }: { icon: string; className?:
 export default function Home() {
   const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
     setFormStatus("sending");
 
     const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/rynovixstudio@gmail.com", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-        },
-        body: formData,
-      });
-
-      if (!response.ok) {
-        throw new Error("FormSubmit request failed");
-      }
-
+    window.setTimeout(() => {
       form.reset();
       setFormStatus("success");
-    } catch {
-      setFormStatus("error");
-    }
+    }, 1200);
   }
 
   return (
@@ -883,6 +866,9 @@ export default function Home() {
             </p>
           </div>
           <form
+            action="https://formsubmit.co/rynovixstudio@gmail.com"
+            method="POST"
+            target="formsubmit-hidden-frame"
             onSubmit={handleContactSubmit}
             className="rounded-[8px] border border-white/12 bg-[#080816]/80 p-5 shadow-2xl md:p-7"
           >
@@ -930,13 +916,12 @@ export default function Home() {
               <p className="mt-4 rounded-[8px] border border-emerald-300/25 bg-emerald-400/10 px-4 py-3 text-sm font-semibold text-emerald-100">
                 Thanks. Your inquiry has been sent.
               </p>
-            )}
-            {formStatus === "error" && (
-              <p className="mt-4 rounded-[8px] border border-red-300/25 bg-red-400/10 px-4 py-3 text-sm font-semibold text-red-100">
-                Something went wrong. Please email rynovixstudio@gmail.com or WhatsApp us.
-              </p>
-            )}
-          </form>
+            )}          </form>
+          <iframe
+            name="formsubmit-hidden-frame"
+            title="Form submit target"
+            className="hidden"
+          />
         </div>
       </section>
 
