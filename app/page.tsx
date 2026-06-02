@@ -330,11 +330,11 @@ function Logo() {
         priority
         className="h-11 w-28 object-contain object-left drop-shadow-[0_0_24px_rgba(56,189,248,0.3)] sm:h-12 sm:w-32"
       />
-      <span className="leading-none">
+      <span className="leading-[0.86]">
         <span className="block bg-gradient-to-r from-sky-200 via-white to-violet-200 bg-clip-text font-heading text-lg font-extrabold tracking-normal text-transparent sm:text-xl">
           Rynovix
         </span>
-        <span className="block bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text text-xs font-bold uppercase tracking-[0.24em] text-transparent">
+        <span className="mt-0.5 block bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text text-xs font-bold uppercase tracking-[0.24em] text-transparent">
           Studio
         </span>
       </span>
