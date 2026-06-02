@@ -321,7 +321,7 @@ const faqs = [
 
 function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-1.5" aria-label="Rynovix Studio home">
+    <a href="#top" className="flex items-center gap-2.5" aria-label="Rynovix Studio home">
       <Image
         src="/rynovix-rs-mark.png"
         alt=""
