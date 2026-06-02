@@ -321,25 +321,15 @@ const faqs = [
 
 function Logo() {
   return (
-    <a href="#top" className="flex items-center gap-3" aria-label="Rynovix Studio home">
-      <span className="relative h-12 w-12 overflow-hidden rounded-[8px] sm:h-14 sm:w-14">
-        <Image
-          src="/rynovix-logo.png"
-          alt=""
-          width={512}
-          height={512}
-          priority
-          className="h-full w-full scale-150 object-contain object-top drop-shadow-[0_0_24px_rgba(56,189,248,0.28)]"
-        />
-      </span>
-      <span className="leading-none">
-        <span className="block bg-gradient-to-r from-violet-300 via-fuchsia-200 to-sky-300 bg-clip-text font-heading text-lg font-extrabold tracking-normal text-transparent sm:text-xl">
-          Rynovix
-        </span>
-        <span className="block bg-gradient-to-r from-slate-100 to-sky-200 bg-clip-text text-xs font-bold uppercase tracking-[0.22em] text-transparent">
-          Studio
-        </span>
-      </span>
+    <a href="#top" className="flex items-center" aria-label="Rynovix Studio home">
+      <Image
+        src="/rynovix-logo.png"
+        alt="Rynovix Studio logo"
+        width={1024}
+        height={1024}
+        priority
+        className="h-16 w-32 object-contain object-left drop-shadow-[0_0_24px_rgba(56,189,248,0.28)] sm:h-20 sm:w-40"
+      />
     </a>
   );
 }
