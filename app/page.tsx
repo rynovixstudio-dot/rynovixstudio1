@@ -186,7 +186,7 @@ const footerColumns = [
     title: "Support",
     links: [
       { label: "FAQ", href: "#faq" },
-      { label: "WhatsApp", href: "https://wa.me/917982821912" },
+      { label: "WhatsApp", href: "https://wa.me/918851622726" },
       { label: "Email", href: "mailto:rynovixstudio@gmail.com" },
       { label: "Contact", href: "#contact" },
     ],
@@ -937,7 +937,7 @@ export default function Home() {
       </section>
 
       <a
-        href="https://wa.me/917982821912"
+        href="https://wa.me/918851622726"
         aria-label="Chat with Rynovix Studio on WhatsApp"
         className="fixed bottom-5 right-5 z-50 grid h-14 w-14 place-items-center rounded-[8px] bg-gradient-to-br from-emerald-400 to-sky-400 text-white shadow-[0_14px_45px_rgba(16,185,129,0.38)] transition hover:scale-105"
       >
@@ -955,11 +955,11 @@ export default function Home() {
               </p>
               <div className="mt-5 space-y-3 text-sm font-semibold text-slate-300">
                 <a
-                  href="https://wa.me/917982821912"
+                  href="https://wa.me/918851622726"
                   className="flex w-fit items-center gap-2 transition hover:text-white"
                 >
                   <WhatsAppIcon className="h-4 w-4 text-emerald-300" />
-                  +91 7982821912
+                  +91 8851622726
                 </a>
                 <a
                   href="mailto:rynovixstudio@gmail.com"
